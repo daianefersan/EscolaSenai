@@ -28,16 +28,16 @@ public class Pessoa {
         return matricula;
     }
 
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
-    }
-
     public String getCpf() {
         return cpf;
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        if(cpf == null || cpf.isEmpty() || !isValidCpf (cpf)){
+            System.out.println("CPF invalido!");
+        }else{
+            this.cpf = cpf;
+        }
     }
 
     public String getNome() {
@@ -85,6 +85,23 @@ public class Pessoa {
     }
 
     public void setSenha(String senha) {
-        this.senha = senha;
+        if(senha == null || senha.isEmpty() || !isValidSenha(senha)){
+            System.out.println("Senha invalida!");
+        }else{
+            this.senha = senha;
+        }
     }
+    private boolean isValidCpf(String cpf){
+        if(cpf.length() != 11){
+            return false;
+        }else{
+            return true;    
+        }
+    }
+    private boolean isValidSenha(String senha){
+        if(senha.length() != 0){
+            return false;
+        }else{
+            return true;    
+        }
 }

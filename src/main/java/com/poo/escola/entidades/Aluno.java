@@ -1,25 +1,26 @@
 package com.poo.escola.entidades;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Aluno extends Pessoa{
-    private Date dataMatricula;
+    private LocalDate dataMatricula;
     private String curso;
-    private Nota nota;
+    private Status status;
     
     public Aluno(int matricula, String cpf, String nome, Date dataNascimento, Endereco endereco, String telefone,
-            String email, String senha, Date dataMatricula, String curso, Nota nota) {
+            String email, String senha, LocalDate dataMatricula, String curso, Status status) {
         super(matricula, cpf, nome, dataNascimento, endereco, telefone, email, senha);
         this.dataMatricula = dataMatricula;
-        this.curso = curso;
-        this.nota = nota;
+        this.curso = curso; 
+        this.status = status;
     }
 
-    public Date getDataMatricula() {
+    public LocalDate getDataMatricula() {
         return dataMatricula;
     }
 
-    public void setDataMatricula(Date dataMatricula) {
+    public void setDataMatricula(LocalDate dataMatricula) {
         this.dataMatricula = dataMatricula;
     }
 
@@ -31,12 +32,17 @@ public class Aluno extends Pessoa{
         this.curso = curso;
     }
 
-    public Nota getNota() {
-        return nota;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setNota(Nota nota) {
-        this.nota = nota;
+    public void setStatus(Status status) {
+        this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Aluno [dataMatricula=" + dataMatricula + ", curso=" + curso + ", status=" + status.getNomePorExtenso() + "]";
+    }    
     
 }

@@ -1,18 +1,19 @@
 package com.poo.escola.entidades;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Pessoa {
     private int matricula;
     private String cpf;
     private String nome;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
     private Endereco endereco;
     private String telefone;
     private String email;
     private String senha;
 
-    public Pessoa(int matricula, String cpf, String nome, Date dataNascimento, Endereco endereco, String telefone,
+    public Pessoa(int matricula, String cpf, String nome, LocalDate dataNascimento, Endereco endereco, String telefone,
             String email, String senha) {
         this.matricula = matricula;
         this.cpf = cpf;
@@ -48,11 +49,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -104,4 +105,5 @@ public class Pessoa {
         }else{
             return true;    
         }
+    }
 }

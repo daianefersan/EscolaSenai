@@ -1,23 +1,24 @@
 package com.poo.escola.entidades;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Professor extends Pessoa{
-    private Date adimissaoData;
+    private LocalDate adimissaoData;
     private Double salario;
 
     public Professor(int matricula, String cpf, String nome, Date dataNascimento, Endereco endereco, String telefone,
-            String email, String senha, Date adimissaoData, Double salario) {
+            String email, String senha, LocalDate adimissaoData, Double salario) {
         super(matricula, cpf, nome, dataNascimento, endereco, telefone, email, senha);
         this.adimissaoData = adimissaoData;
         this.salario = salario;
     }
 
-    public Date getAdimissaoData() {
+    public LocalDate getAdimissaoData() {
         return adimissaoData;
     }
 
-    public void setAdimissaoData(Date adimissaoData) {
+    public void setAdimissaoData(LocalDate adimissaoData) {
         this.adimissaoData = adimissaoData;
     }
 

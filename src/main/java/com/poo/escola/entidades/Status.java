@@ -1,0 +1,18 @@
+package com.poo.escola.entidades;
+
+public enum Status {
+    APROVADO ("Aprovado"),
+    REPROVADO ("Reprovado"),
+    EM_RECUPERACAO ("Em Recuperação");
+
+    private final String nomePorExtenso;
+
+    Status(String nomePorExtenso){
+        this.nomePorExtenso = nomePorExtenso;
+    }
+
+    public String getNomePorExtenso() {
+        return nomePorExtenso;
+    }
+    
+}

@@ -5,10 +5,11 @@ public class Endereco {
     private int numero;
     private String complemento;
     private String cidade;
-    private String estado;
+    private UnidadeFederal estado;
     private String cep;
 
-    public Endereco(String logradouro, int numero, String complemento, String cidade, String estado, String cep) {
+    public Endereco(String logradouro, int numero, String complemento, String cidade, UnidadeFederal estado,
+            String cep) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
@@ -49,11 +50,11 @@ public class Endereco {
         this.cidade = cidade;
     }
 
-    public String getEstado() {
+    public UnidadeFederal getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(UnidadeFederal estado) {
         this.estado = estado;
     }
 
@@ -64,7 +65,7 @@ public class Endereco {
     public void setCep(String cep) {
         this.cep = cep;
     }
-
+    
     @Override
     public String toString() {
         return "Endereco [logradouro=" + logradouro + ", numero=" + numero + ", complemento=" + complemento

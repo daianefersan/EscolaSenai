@@ -1,5 +1,7 @@
 package com.poo.escola.entidades;
 
+import com.poo.escola.entidades.enums.UnidadeFederal;
+
 public class Endereco {
     private String logradouro;
     private int numero;

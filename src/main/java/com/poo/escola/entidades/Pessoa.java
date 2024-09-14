@@ -1,9 +1,11 @@
 package com.poo.escola.entidades;
 
 import java.time.LocalDate;
-import java.util.Date;
 
-public class Pessoa {
+public abstract class Pessoa {
+
+    public static int countMatricula = 1001;
+
     private int matricula;
     private String cpf;
     private String nome;
@@ -15,7 +17,8 @@ public class Pessoa {
 
     public Pessoa(int matricula, String cpf, String nome, LocalDate dataNascimento, Endereco endereco, String telefone,
             String email, String senha) {
-        this.matricula = matricula;
+        this.matricula = countMatricula;
+        countMatricula ++;
         this.cpf = cpf;
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -23,6 +26,11 @@ public class Pessoa {
         this.telefone = telefone;
         this.email = email;
         this.senha = senha;
+    }
+
+    public Pessoa(){
+        this.matricula = countMatricula;
+        countMatricula ++;
     }
 
     public int getMatricula() {
@@ -100,10 +108,17 @@ public class Pessoa {
         }
     }
     private boolean isValidSenha(String senha){
-        if(senha.length() != 0){
+        if(senha.length() < 8){
             return false;
         }else{
             return true;    
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa [matricula=" + matricula + ", cpf=" + cpf + ", nome=" + nome + ", dataNascimento="
+                + dataNascimento + ", endereco=" + endereco + ", telefone=" + telefone + ", email=" + email + ", senha="
+                + senha + "]";
     }
 }

@@ -1,4 +1,4 @@
-package com.poo.escola.entidades;
+package com.poo.escola.entidades.enums;
 
 public enum Status {
     APROVADO ("Aprovado"),
